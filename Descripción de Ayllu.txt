@@ -1,0 +1,144 @@
+#########
+A Y L L U
+#########
+
+
+Ayllu es un sistema web encargado de analizar y generar reportes de simulacros de adimisión.
+Este software está dirigido a estudiantes preuniversitarios que deseen practicar y poner a 
+prueba los conocimientos obtenidos en academias, centros pre univesitarios o de manera autodidacta.
+
+
+------
+Visión
+------
+
+Ayllu busca apoyar al estudiante preuniversitario en el ingreso a la universidad elegida, 
+analizando y generando reportes de simulacros que el estudiante realize, brindandará un
+panorama más claro en cuanto a los conocimientos adquirdos.
+
+------
+Misión
+------
+
+Ayllu implementará herramientas sofisticadas de análisis para determinar la situación actual del 
+estudiante en cuanto a sus conocimientos, además de utilizar tecnologías de vanguardia.
+
+
+-----------
+Descripción
+-----------
+
+Como se mencionó anteriormente Ayllu es un sistema web para el análisis y generación de reportes 
+de simulacros de admisión orientado al estudiante preuniversitario, el sistema cuenta con una 
+licencia GNU General Public License v3.0 el cual permite su copia, modificación, etc; Respetando 
+la libre distribución del software.
+
+El presente documento ha sido creado para detallar el funcionamiento de Ayllu y de esa forma poder 
+obtener los requisitos funcionales y no funcionales que permitirán el desarrollo del sistema web.
+	
+	--------------
+	Funcionamiento
+	--------------
+
+		-------------------
+		Registro de usuario
+		-------------------
+
+		Ayllu es un software libre, sin embargo para hacer uso de el uno deberá registrarse, el registro es
+		necesario para poder llevar un orden en los datos de los usuarios, el registro será simple y rápido,
+		los datos a solicitar serán: apellidos, nombres, correo electrónico, nickname, celular (opcional),
+		contraseña, universidad a postular, metodología de estudio (academia, pre, autodidacta,etc).
+
+		Una vez registrado el usuario el sistema enviará un correo de confirmación para validar el registro, si 
+		no se confirma el registro el usuario no podrá utilizar Ayllu.
+
+
+		-----------------------------
+		Edición del Perfil de Usuario 
+		-----------------------------
+
+		La edición de perfil es una función no critica, ya que no influye directamente en la realización de nuestra
+		visión, sin embargo se colocará para que la experiencia con Ayllu se más amena. La edición del perfil consiste
+		en modificar campos como apellidos, nombres, celular, universidad a postular, metodología de estudio. Además se 
+		podrá editar la contraseña y la foto de usuario, la cual se generará por defecto al registrarse y se podrá editar 
+		una vez validado el registro.
+
+
+		-------------------------------
+		Creación de un Perfil de Examen
+		-------------------------------
+
+		Una función muy importante de Ayllu es la creación de perfiles de examen. Un perfil de examen es un conjunto de datos
+		que sirven para definir la estructura de un formulario de respuestas. Los datos que se requieren son: nombre del perfil,
+		nombres de las materias, número de preguntas por cada materia,numero de claves por pregunta.
+		Con esta función Ayllu permite la creación de distintos formularios para examenes y por ende la correción varaida de 
+		simulacros.
+
+
+		---------------------
+		Perfil de Institución
+		---------------------
+
+		Ayllu permite también la opción de crear un perfil de institución, este perfil de institución servirá para ordenar los
+		exámenes de simulacro, de esta forma se podrá realizar un seguimiento más ordenado a la institución que se desee 
+		ingresar (universidad, instituto,etc).
+
+		El Perfil de institución tendrá los campos nombre de la institución, descripción, perfil de examen.
+
+
+		------------------------
+		Análisis de un Simulacro
+		------------------------
+
+		Esta es una de las funciones más importantes de Ayllu, el análisis de un simulacro tiene como objetivo comparar las claves de 
+		respuesta y las respuestas para obtener el promedio final, además también realiza un degradado del examen simulacro separando
+		las respuestas en tres grupos por materia, los grupos son los siguientes: preguntas correctas, preguntas incorrectas y preguntas
+		no contestadas. Esto permite un análisis eficiente de los resultados.
+
+		La función de análisis de un simulacro está compuesto de tres pasos:
+
+		1. Ingreso de Información: En esta primera etapa se le pide al usuario datos acerca del simulacro como por ejemplo perfil de la
+			 institución a postular, año del examen, el puntaje máximo, el puntaje necesario y una descripción (opcional).
+
+		2.  Ingreso de Claves de Respuesta: Aquí el usuario ingresará las claves de respuesta, estan servirán para compararse con las
+			respuestas obtenidas en el simulacro. Las claves de respuesta se guardarán en la base de datos en caso surja alguna 
+			modificación futura.
+
+		3. Ingreso de las Respuestas: Esta es la última etapa de análisis, aquí el usuario ingresa las respuestas que obtuvo al desarrollar
+			el simulacro, estas respuestas también serán almacenadas en la base de datos para posteriores correcciones.
+
+		Una vez cumplida las tres etapas Ayllu mostrará una tabla que contendrá el degradado del simulacro, así como también la cantidad de 
+		preguntas correctas e incorrectas, además del puntaje obtenido. Estos resultados se podrán descargar en formato PDF o imprimir 
+		directamente.
+
+
+		-------------------------
+		Historial de los Análisis
+		-------------------------
+
+		Otra función que Ayllu ofrece a sus usuarios es la de poder revisar los análisis que se realizaron en el pasado, de está forma 
+		el usuario puede realizar un seguimiento a sus notas obtenidas y ver el progreso o el retroceso de sus conocimientos.
+		El historial de los análisis se mostrará en una tabla con el nombre del análisis, la fecha en la que se realizó el análisis,
+		el puntaje obtenido y funciones tales como ver la tabla de degradado, descargarla o imprimirla.
+
+
+		---------------------
+		Gráficos Estadísticos
+		---------------------
+
+		Esta función al igual que el Análisis de un Simulacro son críticas ya que brinda información precisa e importante 
+		acerca de como el estudiante se encuentra con respecto a sus estudios.
+
+
+			Variables que inciden sobre el estudiante:
+			- Puntaje de simulacro
+			- Tiempo (Total y utilizado)
+			- Preguntas Corectas
+			- Preguntas Incorrectas
+			- Preguntas no contestadas
+			- Número de simulacros corregidos
+			- Puntaje necesario para ingresar
+			- Preguntas correctas Ciencias
+			- Preguntas correctas Letras
+
+		OJO: Separar por instituciones.
